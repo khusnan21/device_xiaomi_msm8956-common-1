@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    device/xiaomi/msm8956-common/configs/media_codecs.xml:system/etc/media_codecs.xml 
+    device/xiaomi/msm8956-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # OMX
 PRODUCT_PACKAGES += \
