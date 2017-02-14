@@ -106,16 +106,6 @@ BOARD_HARDWARE_CLASS += \
 # CNE
 BOARD_USES_QCNE := true
 
-# Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-    endif
-  endif
-endif
-WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
-
 # Display
 BOARD_USES_ADRENO := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -191,7 +181,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
 PROTOBUF_SUPPORTED := true
-TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
@@ -211,3 +200,4 @@ BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_AP      := "ap"
 WIFI_DRIVER_FW_PATH_STA     := "sta"
+
