@@ -27,6 +27,10 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
+# CAF REVISION
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.caf.branch=LA.BR.1.3.6_rb1.13
+
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Permissions
