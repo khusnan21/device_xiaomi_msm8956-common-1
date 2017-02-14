@@ -1,0 +1,10 @@
+[
+ {
+   "repository": "proprietary_vendor_xiaomi",
+   "target_path": "vendor_xiaomi"
+ },
+ {
+   "repository": "kernel_xiaomi_msm8956",
+   "target_path": "kernel/xiaomi/msm8956"
+ }
+]
