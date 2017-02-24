@@ -201,7 +201,7 @@ on post-fs-data
     mkdir /persist/display 0770 system graphics
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
-    # We chown/chmod /persist again so because mount is run as root + defaults
+    # We chown/chmod /persist again so because mount is run as root  defaults
     chown system system /persist
     chmod 0771 /persist
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
@@ -306,6 +306,13 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/audio_pp 0771 media audio
+
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chown system system /sys/class/devfreq/gpubw/min_freq
+    chmod 0660 /sys/class/devfreq/gpubw/min_freq
 
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
