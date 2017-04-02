@@ -175,6 +175,7 @@ TARGET_PER_MGR_ENABLED := true
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
+TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 # Properties
 TARGET_SYSTEM_PROP += $(VENDOR_PATH)/system.prop
