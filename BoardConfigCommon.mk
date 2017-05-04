@@ -151,6 +151,10 @@ TARGET_USE_CM_RAMDISK := true
 TARGET_RECOVERY_FSTAB :=  device/xiaomi/msm8956-common/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_F2FS := true
 
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_xiaomi
+TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
+
 # RIL
 PROTOBUF_SUPPORTED := true
 
