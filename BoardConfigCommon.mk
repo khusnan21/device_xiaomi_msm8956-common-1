@@ -28,8 +28,6 @@ ENABLE_CPUSETS := true
 
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
-TARGET_PROVIDES_POWERHAL := true
-
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 ramoops_memreserve=4M
 BOARD_KERNEL_BASE := 0x80000000
@@ -188,7 +186,9 @@ BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_AP      := "ap"
 WIFI_DRIVER_FW_PATH_STA     := "sta"
 
-# DT2W
+# Power
+TARGET_PROVIDES_POWERHAL := true
+TARGET_USES_INTERACTION_BOOST := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
 
 # Inherit from the proprietary version
