@@ -28,6 +28,8 @@ ENABLE_CPUSETS := true
 
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
+TARGET_PROVIDES_POWERHAL := true
+
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 ramoops_memreserve=4M
 BOARD_KERNEL_BASE := 0x80000000
