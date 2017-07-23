@@ -84,6 +84,18 @@ TARGET_TS_MAKEUP := true
 # CNE
 BOARD_USES_QCNE := true
 
+#Dexpreopt
+ifeq ($(CITRUS_RELEASE),true)
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
+endif
+
 # Display
 BOARD_USES_ADRENO := true
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
