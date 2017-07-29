@@ -58,10 +58,10 @@ persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 
 # Graphics
-debug.egl.hw=1
+debug.egl.hw=0
 debug.enable.sglscale=1
 debug.mdpcomp.logs=0
-debug.sf.hw=1
+debug.sf.hw=0
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 persist.hwc.mdpcomp.enable=true
@@ -132,7 +132,6 @@ wifi.interface=wlan0
 ro.min.fling_velocity=160
 ro.max.fling_velocity=20000
 
-
 # Dex2oat threads for faster app installation
 # Use all 4 Cores/Threads of our CPU
 ro.sys.fw.dex2oat_thread_count=6
@@ -145,13 +144,6 @@ persist.sys.scrollingcache=1
 
 # Spare some RAM
 persist.sys.purgeable_assets=1
-
-# Improve cached apps limit
-ro.sys.fw.bg_apps_limit=55
-
-# Background service properties
-ro.config.max_starting_bg=4
-persist.added_boot_bgservices=4
 
 # Reschedule the services during app launch
 ro.am.reschedule_service=true
