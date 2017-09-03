@@ -117,6 +117,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl \
+    camera.msm8952 \
+    libqomx_core \
+    libmm-qcamera \
     Snap
 
 # Connectivity Engine support (CNE)
