@@ -147,3 +147,6 @@ persist.sys.purgeable_assets=1
 
 # Reschedule the services during app launch
 ro.am.reschedule_service=true
+
+# zram disk
+ro.config.zram=true
