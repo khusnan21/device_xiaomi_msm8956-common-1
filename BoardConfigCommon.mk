@@ -209,6 +209,9 @@ USE_OPENGL_RENDERER := true
 PROTOBUF_SUPPORTED := true
 TARGET_RIL_VARIANT := caf
 
+# SDClang
+SDCLANG := false
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 include device/qcom/sepolicy/legacy-sepolicy.mk
