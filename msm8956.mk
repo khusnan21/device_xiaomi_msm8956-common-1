@@ -220,7 +220,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_height=2048
 
 # IPA Manager
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
