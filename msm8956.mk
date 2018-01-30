@@ -225,6 +225,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_width=3072 \
     ro.hwui.text_large_cache_height=2048
 
+# IMS extension
+PRODUCT_PACKAGES += ims-ext-common
+
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
