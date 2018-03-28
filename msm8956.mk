@@ -22,14 +22,13 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/msm8956-common/msm8956-common-vendor.mk)
 
-#$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
+#$(call inherit-product-if-exists, vendor/citrus/build/configs/phone-xxhdpi-2048-hwui-memory.mk)
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
@@ -163,7 +162,7 @@ PRODUCT_PACKAGES += \
 # Face detection extension
 PRODUCT_PACKAGES += \
     com.qualcomm.qti.camera
-    
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.0-service-custom
