@@ -124,8 +124,6 @@ LOCAL_HEADER_LIBRARIES := media_plugin_headers gralloc_headers
 
 LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 
-LOCAL_CLANG := false
-
 LOCAL_MODULE_RELATIVE_PATH := hw
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
