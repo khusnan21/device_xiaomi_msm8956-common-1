@@ -30,7 +30,6 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
-TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
@@ -176,10 +175,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiDoze
 
-# Face detection extension
-PRODUCT_PACKAGES += \
-    org.codeaurora.camera
-
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.0-service-custom
@@ -190,10 +185,6 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio \
     qcom.fmradio.xml
-
-# For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
@@ -404,7 +395,6 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     wificond \
     hostapd \
-    wificond \
     wpa_supplicant \
     wpa_supplicant.conf
 
