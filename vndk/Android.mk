@@ -17,6 +17,7 @@ VNDK_SP_LIBRARIES := \
     libc++ \
     libcompiler_rt \
     libcutils \
+    libdexfile \
     libft2 \
     libhardware \
     libhidlbase \
@@ -28,7 +29,8 @@ VNDK_SP_LIBRARIES := \
     libpng \
     libunwind \
     libunwindstack \
-    libutils
+    libutils \
+    libutilscallstack
 
 define define-vndk-lib
 include $$(CLEAR_VARS)
