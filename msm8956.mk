@@ -380,7 +380,6 @@ PRODUCT_PACKAGES += \
 
 # VNDK
 PRODUCT_PACKAGES += \
-    libstdc++.vendor \
     vndk-sp
 
 # WiFi HAL
