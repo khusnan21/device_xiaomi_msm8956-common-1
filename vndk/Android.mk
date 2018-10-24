@@ -27,6 +27,7 @@ VNDK_SP_LIBRARIES := \
     liblzma \
     libpng \
     libunwind \
+    libunwindstack \
     libutils
 
 define define-vndk-lib
