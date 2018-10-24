@@ -34,6 +34,8 @@ VNDK_SP_LIBRARIES := \
     libutils \
     libutilscallstack
 
+vndk_sp_dir := vndk-sp-$(PLATFORM_VNDK_VERSION)
+
 define define-vndk-lib
 include $$(CLEAR_VARS)
 LOCAL_MODULE := $1.$2
@@ -44,7 +46,7 @@ LOCAL_MULTILIB := first
 LOCAL_MODULE_TAGS := optional
 LOCAL_INSTALLED_MODULE_STEM := $1.so
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_RELATIVE_PATH := $3
+LOCAL_MODULE_RELATIVE_PATH := $(vndk_sp_dir)
 LOCAL_VENDOR_MODULE := $4
 include $$(BUILD_PREBUILT)
 
@@ -59,7 +61,7 @@ LOCAL_MULTILIB := 32
 LOCAL_MODULE_TAGS := optional
 LOCAL_INSTALLED_MODULE_STEM := $1.so
 LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_RELATIVE_PATH := $3
+LOCAL_MODULE_RELATIVE_PATH := $(vndk_sp_dir)
 LOCAL_VENDOR_MODULE := $4
 include $$(BUILD_PREBUILT)
 endif  # TARGET_TRANSLATE_2ND_ARCH is not true
@@ -74,5 +76,7 @@ LOCAL_MODULE := vndk-sp
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := \
     $(addsuffix .vndk-sp-gen,$(VNDK_SP_LIBRARIES))
+
+vndk_sp_dir :=
 
 include $(BUILD_PHONY_PACKAGE)
