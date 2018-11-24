@@ -42,6 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.hfp.client=1 \
     persist.vendor.bt.enable.splita2dp=false \
+    qcom.bluetooth.soc=smd \
     vendor.qcom.bluetooth.soc=smd \
     ro.btconfig.chip=WCN3680 \
     ro.btconfig.dev=/dev/smd3 \
