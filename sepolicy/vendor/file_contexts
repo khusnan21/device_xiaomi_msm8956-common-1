@@ -37,15 +37,3 @@
 /sys/devices/soc\.0/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name             u:object_r:sysfs_ssr:s0
 /sys/devices/soc\.0/[0-9a-f]+\.qcom,pronto/subsys[0-9]+/name          u:object_r:sysfs_ssr:s0
 /sys/devices/soc\.0/[0-9a-f]+\.qcom,venus/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
-
-# Same process hal's (vndk-ext-gen libs) and its dependencies
-/vendor/lib(64)?/hw/android\.hardware\.vibrator@1\.0-impl\.so         u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/gralloc\.msm8952\.so                              u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vibrator\.default\.so                             u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/hw/vulkan\.msm8952\.so                               u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/android\.hardware\.configstore@1\.0\.so              u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/android\.hardware\.configstore-utils\.so             u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/android\.hardware\.vibrator@1\.0\.so                 u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libbinder\.so                                        u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libmemalloc\.so                                      u:object_r:same_process_hal_file:s0
-/vendor/lib(64)?/libui\.so                                            u:object_r:same_process_hal_file:s0
