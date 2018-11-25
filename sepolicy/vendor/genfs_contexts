@@ -13,5 +13,9 @@ genfscon sysfs /devices/soc.0/7af6000.i2c/i2c-6/6-0045/leds/red             u:ob
 genfscon sysfs /devices/soc.0/7af6000.i2c/i2c-6/6-0045/leds/green           u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc.0/7af6000.i2c/i2c-6/6-0045/leds/blue            u:object_r:sysfs_graphics:s0
 
+# MMC host
+genfscon sysfs /devices/soc.0/7824900.sdhci/mmc_host/mmc0                   u:object_r:sysfs_mmc_host:s0
+genfscon sysfs /devices/soc.0/7864900.sdhci/mmc_host/mmc1                   u:object_r:sysfs_mmc_host:s0
+
 # Netmgrd/rmnet
 genfscon sysfs /devices/virtual/net                                         u:object_r:sysfs_net:s0
