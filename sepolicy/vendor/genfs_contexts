@@ -12,3 +12,6 @@ genfscon sysfs /devices/soc.0/leds-qpnp-19/leds/                            u:ob
 genfscon sysfs /devices/soc.0/7af6000.i2c/i2c-6/6-0045/leds/red             u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc.0/7af6000.i2c/i2c-6/6-0045/leds/green           u:object_r:sysfs_graphics:s0
 genfscon sysfs /devices/soc.0/7af6000.i2c/i2c-6/6-0045/leds/blue            u:object_r:sysfs_graphics:s0
+
+# Netmgrd/rmnet
+genfscon sysfs /devices/virtual/net                                         u:object_r:sysfs_net:s0
