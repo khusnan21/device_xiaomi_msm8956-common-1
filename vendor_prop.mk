@@ -24,6 +24,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.dolby.ds2.enabled=true \
