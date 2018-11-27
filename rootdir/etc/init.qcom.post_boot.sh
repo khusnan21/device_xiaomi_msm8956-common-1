@@ -44,36 +44,50 @@ set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
 echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
 echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
 
-#Set other memory parameters
-echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
-
-#Set Low memory killer minfree parameters
-# 64 bit up to 2GB with use 14K, and above 2GB will use 18K
+# Set Memory parameters.
+#
+# Set per_process_reclaim tuning parameters
+# All targets will use vmpressure range 50-70,
+# All targets will use 512 pages swap size.
+#
+# Set Low memory killer minfree parameters
+# 64 bit will use Google default LMK series.
 #
 # Set ALMK parameters (usually above the highest minfree values)
-# 64 bit will have 81K
 # vmpressure_file_min threshold is always set slightly higher
-# than LMK minfree's last bin value for 32-bit arch. It is calculated as
+# than LMK minfree's last bin value for all targets. It is calculated as
 # vmpressure_file_min = (last bin - second last bin ) + last bin
-# For 64-bit arch, vmpressure_file_min = LMK minfree's last bin value
- 
+#
+# Set allocstall_threshold to 0 for all targets.
+#
+# Calculate vmpressure_file_min as below & set for 64 bit:
+# vmpressure_file_min = last_lmk_bin + (last_lmk_bin - last_but_one_lmk_bin)
 if [ $MemTotal -gt 2097152 ]; then
-    echo 10 > /sys/module/process_reclaim/parameters/pressure_min
-    echo 1024 > /sys/module/process_reclaim/parameters/per_swap_size
     echo "18432,23040,27648,32256,55296,80640" > /sys/module/lowmemorykiller/parameters/minfree
-    echo 80640 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
 else
-    echo 10 > /sys/module/process_reclaim/parameters/pressure_min
-    echo 1024 > /sys/module/process_reclaim/parameters/per_swap_size
     echo "14746,18432,22118,25805,40000,55000" > /sys/module/lowmemorykiller/parameters/minfree
-    echo 55000 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
 fi
 
+echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+echo 70 > /sys/module/process_reclaim/parameters/pressure_max
+echo 50 > /sys/module/process_reclaim/parameters/pressure_min
+echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
+echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
+echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
+echo 100 > /proc/sys/vm/swappiness
+
+minfree_series=`cat /sys/module/lowmemorykiller/parameters/minfree`
+minfree_1="${minfree_series#*,}" ; rem_minfree_1="${minfree_1%%,*}"
+minfree_2="${minfree_1#*,}" ; rem_minfree_2="${minfree_2%%,*}"
+minfree_3="${minfree_2#*,}" ; rem_minfree_3="${minfree_3%%,*}"
+minfree_4="${minfree_3#*,}" ; rem_minfree_4="${minfree_4%%,*}"
+minfree_5="${minfree_4#*,}"
+vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
+echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
+
 if [ $MemTotal -le 2097152 ]; then
-#Enable B service adj transition for 2GB or less memory
+# Enable B service adj transition for 2GB or less memory
     setprop ro.vendor.qti.sys.fw.bservice_enable true
     setprop ro.vendor.qti.sys.fw.bservice_limit 5
     setprop ro.vendor.qti.sys.fw.bservice_age 5000
