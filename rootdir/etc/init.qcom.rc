@@ -363,7 +363,6 @@ on post-fs-data
     mkdir /data/time/ 0700 system system
 
     mkdir /data/vendor/audio/ 0770 media audio
-    mkdir /data/audio/ 0770 media audio
 
     # Create a folder for audio delta files
     mkdir /data/vendor/audio/acdbdata 0770 media audio
@@ -385,10 +384,6 @@ on post-fs-data
     mkdir /data/vendor/perfd 0770 root system
     chmod 2770 /data/vendor/perfd
     rm /data/vendor/perfd/default_values
-
-    # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
 
     # Sensor
     chmod 0775 /persist/sensors
