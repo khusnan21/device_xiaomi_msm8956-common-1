@@ -86,12 +86,10 @@ vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
 echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
 echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 
-if [ $MemTotal -le 2097152 ]; then
-# Enable B service adj transition for 2GB or less memory
-    setprop ro.vendor.qti.sys.fw.bservice_enable true
-    setprop ro.vendor.qti.sys.fw.bservice_limit 5
-    setprop ro.vendor.qti.sys.fw.bservice_age 5000
-fi
+# Enable B service adj transition
+setprop ro.vendor.qti.sys.fw.bservice_enable true
+setprop ro.vendor.qti.sys.fw.bservice_limit 5
+setprop ro.vendor.qti.sys.fw.bservice_age 5000
 
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
