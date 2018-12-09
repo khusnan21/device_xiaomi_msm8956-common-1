@@ -5,3 +5,5 @@ vendor.min_freq_4                 u:object_r:vendor_mpctl_prop:s0
 vendor.post_boot.parsed           u:object_r:vendor_mpctl_prop:s0
 vendor.perf.cores_online          u:object_r:vendor_mpctl_prop:s0
 
+ro.vendor.scroll.preobtain.enable       u:object_r:vendor_scroll_prop:s0
+vendor.perf.gestureflingboost.enable    u:object_r:vendor_scroll_prop:s0
