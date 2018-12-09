@@ -1,0 +1,1 @@
+allow hal_iop vendor_mpctl_prop:file r_file_perms;
