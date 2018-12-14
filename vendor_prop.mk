@@ -155,7 +155,8 @@ DEVICE_PROVISIONED=1 \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_cdma_sub=0 \
     ro.telephony.default_network=22,20 \
-    telephony.lteOnCdmaDevice=1
+    telephony.lteOnCdmaDevice=1 \
+    persist.vendor.qti.pie.telephony=0
 
 # TCP
 PRODUCT_PROPERTY_OVERRIDES += \
