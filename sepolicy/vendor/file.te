@@ -31,4 +31,4 @@ type proc_kernel_sched_boost, fs_type, proc_type;
 type sysfs_wcnss, fs_type, sysfs_type;
 
 # Widevine data file
-type vendor_mediadrm_data_file, file_type, data_file_type;
+type mediadrm_vendor_data_file, file_type, data_file_type;
