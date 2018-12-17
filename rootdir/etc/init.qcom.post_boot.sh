@@ -100,11 +100,6 @@ chown -h system /sys/devices/platform/rs300000a7.65536/sync_sts
 chown -h system /sys/devices/platform/rs300100a7.65536/force_sync
 chown -h system /sys/devices/platform/rs300100a7.65536/sync_sts
 
-echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
-echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-echo 128 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
-
 setprop sys.post_boot.parsed 1
 setprop vendor.post_boot.parsed 1
 
