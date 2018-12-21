@@ -87,9 +87,9 @@ echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_m
 echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
 
 # Enable B service adj transition
-setprop ro.vendor.qti.sys.fw.bservice_enable true
-setprop ro.vendor.qti.sys.fw.bservice_limit 5
-setprop ro.vendor.qti.sys.fw.bservice_age 5000
+#setprop ro.vendor.qti.sys.fw.bservice_enable true
+#setprop ro.vendor.qti.sys.fw.bservice_limit 5
+#setprop ro.vendor.qti.sys.fw.bservice_age 5000
 
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate
 chown -h system /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
