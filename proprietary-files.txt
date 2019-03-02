@@ -124,6 +124,11 @@ vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
+# Dirac - from Xiaomi
+vendor/lib/soundfx/libdirac.so
+vendor/lib/libDiracAPI_SHARED.so
+vendor/etc/diracmobile.config
+
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
